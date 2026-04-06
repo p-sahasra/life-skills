@@ -1,6 +1,6 @@
 export default [
   {
-    id: 16,
+    id: 17,
     title: "Cracking Eggs",
     subtitle: "Crack them clean — no shell bits!",
     emoji: "🥚",
@@ -83,7 +83,7 @@ export default [
     },
   },
   {
-    id: 17,
+    id: 18,
     title: "The Claw Grip",
     subtitle: "Use a real knife without cutting yourself!",
     emoji: "🔪",
@@ -169,7 +169,7 @@ export default [
     },
   },
   {
-    id: 18,
+    id: 19,
     title: "Making Scrambled Eggs",
     subtitle: "Your first real cooked meal!",
     emoji: "🍳",
@@ -262,7 +262,7 @@ export default [
     },
   },
   {
-    id: 19,
+    id: 20,
     title: "Reading a Recipe",
     subtitle: "Follow the instructions and it always works!",
     emoji: "📖",
@@ -353,7 +353,7 @@ export default [
     },
   },
   {
-    id: 20,
+    id: 21,
     title: "Cleaning Up",
     subtitle: "A real chef always cleans as they go!",
     emoji: "🧽",
@@ -439,7 +439,7 @@ export default [
     },
   },
   {
-    id: 21,
+    id: 22,
     title: "Coffee Math",
     subtitle: "The numbers behind a perfect cup of drip coffee!",
     emoji: "☕",

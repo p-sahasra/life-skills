@@ -1,6 +1,6 @@
 export default [
   {
-    id: 21,
+    id: 23,
     title: "Reading a Map",
     subtitle: "Find your way without a phone!",
     emoji: "🗺️",
@@ -90,7 +90,7 @@ export default [
     },
   },
   {
-    id: 22,
+    id: 24,
     title: "What to Do If You Are Lost",
     subtitle: "Stay calm. You know what to do.",
     emoji: "🆘",
@@ -178,7 +178,7 @@ export default [
     },
   },
   {
-    id: 23,
+    id: 25,
     title: "Asking for Help",
     subtitle: "Speaking up when you need something!",
     emoji: "🙋",
@@ -263,7 +263,7 @@ export default [
     },
   },
   {
-    id: 24,
+    id: 26,
     title: "Your Address & Phone Number",
     subtitle: "Know where you live and how to call home!",
     emoji: "🏠",
@@ -334,7 +334,7 @@ export default [
     },
   },
   {
-    id: 25,
+    id: 27,
     title: "Handling Money",
     subtitle: "Know your coins and make change!",
     emoji: "💰",
