@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { THEME } from "../styles/theme";
 import { Exercise } from "./Exercise";
 
 export function LessonPage({ lesson, progress, setProgress, totalLessons }) {
   const key = `lesson${lesson.id}`;
   const done = progress[key] || false;
+  const [activeTab, setActiveTab] = useState(lesson.tabs ? lesson.tabs[0].id : null);
+
+  const exercises = lesson.tabs
+    ? lesson.exercises.filter((ex) => ex.tab === activeTab)
+    : lesson.exercises;
 
   return (
     <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 20px 40px" }}>
@@ -29,8 +35,33 @@ export function LessonPage({ lesson, progress, setProgress, totalLessons }) {
         <div style={{ fontFamily: THEME.fonts.body, fontSize: 18, color: "#444", lineHeight: 1.5 }}>{lesson.readyWhen}</div>
       </div>
 
+      {lesson.tabs && (
+        <div style={{
+          display: "flex", gap: 8, marginBottom: 18, padding: "6px",
+          background: "#F0F0F0", borderRadius: THEME.radii.button,
+        }}>
+          {lesson.tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              style={{
+                flex: 1, padding: "12px 10px", border: "none", cursor: "pointer",
+                borderRadius: THEME.radii.button - 4,
+                fontFamily: THEME.fonts.heading, fontSize: 15, fontWeight: 700,
+                background: activeTab === tab.id ? lesson.color : "transparent",
+                color: activeTab === tab.id ? "white" : "#666",
+                boxShadow: activeTab === tab.id ? `0 2px 8px ${lesson.color}44` : "none",
+                transition: "all 0.2s ease",
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       <h3 style={{ fontFamily: THEME.fonts.heading, fontSize: 24, fontWeight: 700, color: THEME.colors.text, marginBottom: 14 }}>Exercises</h3>
-      {lesson.exercises.map((ex, i) => <Exercise key={i} ex={ex} lessonColor={lesson.color} />)}
+      {exercises.map((ex, i) => <Exercise key={activeTab ? `${activeTab}-${i}` : i} ex={ex} lessonColor={lesson.color} />)}
 
       {lesson.dailyPractice && (
         <div style={{ background: "linear-gradient(135deg, #F5F5F5, #FAFAFA)", borderRadius: THEME.radii.card, padding: "22px 24px", marginTop: 20, border: "2px solid #E0E0E0" }}>
